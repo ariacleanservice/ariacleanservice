@@ -31,11 +31,12 @@ jobs:
           cache: 'npm'
           cache-dependency-path: clean/package-lock.json
 
-      - name: Install and Build
+     - name: Install and Build
         run: |
           cd clean
           npm ci
           npm run build
+          cp sitemap.xml dist/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

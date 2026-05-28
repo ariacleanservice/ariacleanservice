@@ -10,7 +10,7 @@ import bathroomImg from '../assets/images/bathroom.JPG';
 // @ts-ignore
 import bed3Img from '../assets/images/bed3.JPG';
 // @ts-ignore
-import livingSizeImg from '../assets/images/living side.JPG';
+import livingSizeImg from '../assets/images/living-side.JPG';
 
 interface HeroProps {
   onCalculateClick: () => void;

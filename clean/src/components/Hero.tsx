@@ -33,7 +33,7 @@ export default function Hero({ onCalculateClick }: HeroProps) {
       role: "Living Room Sanctuary"
     },
     {
-      url: livingSizeImg,
+      url: livingSideImg,
       caption: "Curated Spatial Detailing",
       role: "Architectural Lounge Care"
     },

@@ -11,6 +11,7 @@ import bathroomImg from '../assets/images/bathroom.JPG';
 import bed3Img from '../assets/images/bed3.JPG';
 // @ts-ignore
 import livingSizeImg from '../assets/images/living size.JPG';
+
 interface HeroProps {
   onCalculateClick: () => void;
 }

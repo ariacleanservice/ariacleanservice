@@ -11,11 +11,18 @@ import {
 export default function BookingWidget() {
   const services = [
     {
-      id: "deep-clean",
-      title: "Move-In & Move-Out Cleaning",
-      description: "Thorough and exhaustive detailed clean for homes and apartments in transition. Perfect for securing tenant security deposits, satisfying commercial leases, or preparing a fresh, pristine sanctuary before moving your life in.",
+         id: "commercial-airbnb",
+      title: "Hotels & Airbnb Commercial Services",
+      description: "Premium housekeeping and rapid-turnover cleanings designed specifically for boutique hotels, short-term Airbnb rentals, and corporate commercial spaces. We keep guest experiences immaculate and five-star ready.",
+      icon: Building2,
+      tags: ["Airbnb rapid turnovers", "Amenity cleaning & restocking", "Commercial space detailing", "High-frequency disinfection"]
+    },
+    {
+      id: "deep-cleaning",
+      title: "Deep Cleaning & Full Restoration",
+      description: "Full cleaning and experienced intensive restoration for residential homes, condominiums, and properties. Complete sanitization of all surfaces, meticulous scrubbing, detail wiping, and luxury finishing to leave your place completely flawless.",
       icon: Sparkles,
-      tags: ["Cabinet interiors & exteriors", "Deep baseboard detailing", "Full fixture sanitization", "Comprehensive floor restoration"]
+      tags: ["Full deep sanitization", "Exhaustive details & corners", "Luxury surface polishing", "Detailed dust extraction"]
     },
     {
       id: "laundry",
@@ -46,11 +53,11 @@ export default function BookingWidget() {
       tags: ["Oven grease extraction", "Full fridge shelf wash", "Baking soda treatments", "Odour & trace elimination"]
     },
     {
-      id: "commercial-airbnb",
-      title: "Hotels & Airbnb Commercial Services",
-      description: "Premium housekeeping and rapid-turnover cleanings designed specifically for boutique hotels, short-term Airbnb rentals, and corporate commercial spaces. We keep guest experiences immaculate and five-star ready.",
-      icon: Building2,
-      tags: ["Airbnb rapid turnovers", "Amenity cleaning & restocking", "Commercial space detailing", "High-frequency disinfection"]
+     id: "move-in-out",
+      title: "Move-In & Move-Out Cleaning",
+      description: "Thorough and exhaustive detailed clean for homes and apartments in transition. Perfect for securing tenant security deposits, satisfying commercial leases, or preparing a fresh, pristine sanctuary before moving your life in.",
+      icon: Sparkles,
+      tags: ["Cabinet interiors & exteriors", "Deep baseboard detailing", "Full fixture sanitization", "Comprehensive floor restoration"]
     }
   ];
 

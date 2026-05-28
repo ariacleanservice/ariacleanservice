@@ -9,8 +9,6 @@ import ildaFounderImg from '../assets/images/ilda.PNG';
 import bathroomImg from '../assets/images/bathroom.JPG';
 // @ts-ignore
 import bed3Img from '../assets/images/bed3.JPG';
-// @ts-ignore
-import livingSizeImg from '../assets/images/living-side.JPG';
 
 interface HeroProps {
   onCalculateClick: () => void;
@@ -31,11 +29,6 @@ export default function Hero({ onCalculateClick }: HeroProps) {
       url: heroBanner,
       caption: "Spotless Modern Residence",
       role: "Living Room Sanctuary"
-    },
-    {
-      url: livingSideImg,
-      caption: "Curated Spatial Detailing",
-      role: "Architectural Lounge Care"
     },
     {
       url: bathroomImg,

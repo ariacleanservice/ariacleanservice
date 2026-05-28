@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Star, Quote, CheckCircle2, ChevronLeft, ChevronRight, MessageSquare, Send, X } from 'lucide-react';
+import { Star, Quote, CheckCircle2, ChevronLeft, ChevronRight, MessageSquare, Send, X, ShieldCheck } from 'lucide-react';
+
 
 interface Review {
   name: string;
@@ -18,8 +19,7 @@ const DEFAULT_REVIEWS: Review[] = [
     role: "",
     location: "Key Biscayne, FL",
     stars: 5,
-    quote: "My clients invest heavily in premium finishes—honed Calacatta marble, raw cedar ceilings, and custom silk wool rugs. Only ARIA understands how to treat these materials. No bleach odors, just meticulous preservation.",
-    bgImageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200",
+    quote: "The absolute best cleaning service in Miami! Aria left my home completely spotless, with flawless attention to detail on every single surface. There was no chemical smell at all, just an incredibly clean house and amazing care.",
     portraitUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200"
   },
   {
@@ -27,8 +27,7 @@ const DEFAULT_REVIEWS: Review[] = [
     role: "",
     location: "Coral Gables, FL",
     stars: 5,
-    quote: "With over 8,500 square feet of residential space to keep spotless, scheduling is typically a nightmare. The instant booking tiers and precise concierge coordination save me hours every single month.",
-    bgImageUrl: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1200",
+    quote: "Our house is 2,500 square feet and they cleaned every corner flawlessly! Their deep cleaning team is incredibly professional, meticulous, and gets everything spotless. Our kitchen and marble floors have never looked so beautiful!",
     portraitUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200"
   },
   {
@@ -36,7 +35,7 @@ const DEFAULT_REVIEWS: Review[] = [
     role: "",
     location: "Miami Beach, FL",
     stars: 5,
-    quote: "The professional cleaning standards are genuine. I am highly sensitive to standard chemical cleaners, but ARIA's safe formulas leave the rooms clean, healthy, and breathing completely fresh.",
+    quote: "Outstanding cleaning and amazing customer service! They thoroughly deep-cleaned our apartment, leaving it completely dust-free, sanitized, and smelling completely fresh. A truly five-star experience every time.",
     bgImageUrl: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1200",
     portraitUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200"
   }
@@ -537,25 +536,25 @@ export default function ReviewsSection() {
           </AnimatePresence>
         </div>
 
-        {/* Bottom Trust Signatures: 100% Satisfaction Guarantee */}
+       {/* Bottom Trust Signatures: Fully Bonded, Insured & Licensed */}
         <div id="trust-guarantee-card" className="bg-[#FAF9F5] border border-[#EBEBEB] rounded-3xl p-6 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-8 text-left mt-4 shadow-sm">
           <div className="flex items-start gap-5">
             <div className="w-16 h-16 rounded-2xl bg-[#2D2D2D] flex items-center justify-center border border-[#2D2D2D] shrink-0 shadow-sm">
-              <span className="font-sans font-bold text-lg text-[#FAF9F5]">100%</span>
+              <ShieldCheck className="w-8 h-8 text-[#FAF9F5]" />
             </div>
             <div>
               <h4 className="font-sans font-semibold text-xs sm:text-sm text-[#2D2D2D] uppercase tracking-[0.2em]">
-                Immaculate Satisfaction Guarantee
+                Fully Bonded, Insured & Licensed
               </h4>
               <p className="font-sans text-xs text-[#7A7A7A] font-light leading-relaxed mt-1.5">
-                We guarantee immaculate results on every service. <strong>If any zone fails to meet your standard, simply contact us within 24 hours and we will return to re-clean it immediately at no cost.</strong> Your refined clean outcome and complete peace of mind are permanently secured.
+                 Your luxury estate, personal privacy, and peace of mind are completely secured with Aria Clean Service. <strong>We are fully bonded, comprehensively insured up to $2M, and licensed to operate with the absolute highest level of professional responsibility.</strong> Our hand-selected, rigorously vetted elite housekeeping technicians are fully protected under our comprehensive coverage.
               </p>
             </div>
           </div>
           <div className="flex flex-wrap gap-4 shrink-0 text-[10px] font-sans font-bold text-[#FAF9F5] uppercase tracking-[0.18em] bg-[#2D2D2D] py-3.5 px-6 rounded-xl shadow-xs backdrop-blur-xs">
-            <span>✓ Verified Trust</span>
-            <span>✓ Insured Desk</span>
-            <span>✓ Premium Service</span>
+            <span>✓ Fully Bonded</span>
+            <span>✓ Active Insurance</span>
+            <span>✓ Vetted Staff</span>
           </div>
         </div>
 

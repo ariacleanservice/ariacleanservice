@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'motion/react';
 // @ts-ignore
 import luxuryCleanInterior from '../assets/images/luxury_mop_bathroom_isometric_1779810900581.png';
 // @ts-ignore
-import ildaFounderImg from '../assets/images/ilda_founder_1779809787335.png';
+import ildaFounderImg from '../assets/images/ilda.PNG';
 
 interface HeroProps {
   onCalculateClick: () => void;

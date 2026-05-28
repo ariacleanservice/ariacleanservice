@@ -63,7 +63,7 @@ const DEFAULT_REVIEWS: Review[] = [
     role: "",
     location: "Key Biscayne, FL",
     stars: 5,
-    quote: "My clients invest heavily in premium finishes—honed Calacatta marble, raw cedar ceilings, and custom silk wool rugs. Only ARIA understands how to treat these materials. No bleach odors, just meticulous preservation.",
+    quote: "The absolute best cleaning service in Miami! Aria left my home completely spotless, with flawless attention to detail on every single surface. There was no chemical smell at all, just an incredibly clean house and amazing care.",
     bgImageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200",
     portraitUrl: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200",
     status: "approved",
@@ -75,7 +75,7 @@ const DEFAULT_REVIEWS: Review[] = [
     role: "",
     location: "Coral Gables, FL",
     stars: 5,
-    quote: "With over 8,500 square feet of residential space to keep spotless, scheduling is typically a nightmare. The instant booking tiers and precise concierge coordination save me hours every single month.",
+    quote: "Our house is 2,500 square feet and they cleaned every corner flawlessly! Their deep cleaning team is incredibly professional, meticulous, and gets everything spotless. Our kitchen and marble floors have never looked so beautiful!",
     bgImageUrl: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1200",
     portraitUrl: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200",
     status: "approved",
@@ -87,7 +87,7 @@ const DEFAULT_REVIEWS: Review[] = [
     role: "",
     location: "Miami Beach, FL",
     stars: 5,
-    quote: "The Eco-Organic standards are genuine. I am highly sensitive to standard chemical cleaners, but ARIA's plant-based, essential oil botanicals leave the rooms clean, healthy, and breathing completely fresh.",
+    quote: "Outstanding cleaning and amazing customer service! They thoroughly deep-cleaned our apartment, leaving it completely dust-free, sanitized, and smelling completely fresh. A truly five-star experience every time.",
     bgImageUrl: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1200",
     portraitUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200",
     status: "approved",
@@ -95,9 +95,26 @@ const DEFAULT_REVIEWS: Review[] = [
   }
 ];
 
-// Seed reviews.json if not present
-if (!fs.existsSync(REVIEWS_FILE)) {
-  fs.writeFileSync(REVIEWS_FILE, JSON.stringify(DEFAULT_REVIEWS, null, 2));
+// Seed reviews.json if not present, or upgrade old review quotes
+let existingReviews: Review[] = [];
+try {
+  if (fs.existsSync(REVIEWS_FILE)) {
+    existingReviews = JSON.parse(fs.readFileSync(REVIEWS_FILE, "utf-8"));
+  }
+} catch (e) {}
+
+const hasOldReviews = existingReviews.some(
+  r => r.quote && (
+    r.quote.includes("My clients invest heavily") || 
+    r.quote.includes("With over 8,500 square feet") || 
+    r.quote.includes("The Eco-Organic standards") ||
+    r.quote.includes("The professional cleaning standards")
+  )
+);
+
+if (!fs.existsSync(REVIEWS_FILE) || hasOldReviews) {
+  const customReviews = existingReviews.filter(r => r.id !== "v1" && r.id !== "j2" && r.id !== "m3");
+  fs.writeFileSync(REVIEWS_FILE, JSON.stringify([...DEFAULT_REVIEWS, ...customReviews], null, 2));
 }
 
 // Seed emails_log.json if not present

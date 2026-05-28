@@ -1,0 +1,6 @@
+{
+  "name": "Aria Clean Service",
+  "description": "A high-end, responsive, and organic minimalist website with an interactive booking and pricing calculator for a modern cleaning agency.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

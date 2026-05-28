@@ -12,14 +12,13 @@ interface PortfolioItem {
 }
 
 export default function PortfolioPage() {
-  const [filter, setFilter] = useState<'all' | 'residential' | 'airbnb' | 'commercial' | 'detailing' | 'organization'>('all');
+  const [filter, setFilter] = useState<'all' | 'residential' | 'airbnb' | 'detailing' | 'organization'>('all');
   const [selectedItem, setSelectedItem] = useState<PortfolioItem | null>(null);
 
   const categories = [
     { id: 'all', label: 'All Projects', icon: LayoutGrid },
     { id: 'residential', label: 'Residential', icon: Home },
     { id: 'airbnb', label: 'Hotels & Airbnb', icon: Sparkles },
-    { id: 'commercial', label: 'Commercial Offices', icon: Building2 },
     { id: 'organization', label: 'Organization', icon: CheckSquare },
   ];
 
@@ -55,14 +54,6 @@ export default function PortfolioPage() {
       categoryLabel: 'Organization',
       description: 'Sophisticated closet layout arrangement. Sorting garments by season, palette grouping, and organizing footwear to optimize spatial harmony and functional mornings.',
       imageUrl: 'https://images.unsplash.com/photo-1558882224-cca166733360?auto=format&fit=crop&q=80&w=1200'
-    },
-    {
-      id: 'port-5',
-      title: 'Tech Headquarters Commercial Clean',
-      category: 'commercial',
-      categoryLabel: 'Commercial Offices',
-      description: 'Detailed office sanitization for a high-traffic executive workspace. Disinfecting conference desks, sanitizing ventilation pathways, and leaving a completely fresh commercial environment.',
-      imageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200'
     },
     {
       id: 'port-6',

@@ -5,7 +5,12 @@ import { motion, AnimatePresence } from 'motion/react';
 import luxuryCleanInterior from '../assets/images/luxury_mop_bathroom_isometric_1779810900581.png';
 // @ts-ignore
 import ildaFounderImg from '../assets/images/ilda.PNG';
-
+// @ts-ignore
+import bathroomImg from '../assets/images/bathroom.JPG';
+// @ts-ignore
+import bed3Img from '../assets/images/bed3.JPG';
+// @ts-ignore
+import livingSizeImg from '../assets/images/living size.JPG';
 interface HeroProps {
   onCalculateClick: () => void;
 }
@@ -27,17 +32,17 @@ export default function Hero({ onCalculateClick }: HeroProps) {
       role: "Living Room Sanctuary"
     },
     {
-      url: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=1200",
+      url: livingSizeImg,
       caption: "Curated Spatial Detailing",
       role: "Architectural Lounge Care"
     },
     {
-      url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200",
+      url: bathroomImg,
       caption: "High-Definition Sanitization",
-      role: "Immaculate Chef's Kitchen"
+      role: "Immaculate Bathroom Luxury"
     },
     {
-      url: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&q=80&w=1200",
+      url: bed3Img,
       caption: "Restorative Dust & Linen Detailing", 
       role: "Pristine Luxury Chamber"
     }

@@ -58,22 +58,28 @@ export default function ReviewsSection() {
   // Load reviews on mount
   useEffect(() => {
     const loadReviews = async () => {
+      let activeReviews = [...DEFAULT_REVIEWS];
       try {
         const res = await fetch('/api/reviews');
         if (res.ok) {
           const serverReviews = await res.json();
           if (serverReviews && Array.isArray(serverReviews) && serverReviews.length > 0) {
-            setReviews(serverReviews);
-            return;
+            activeReviews = serverReviews;
           }
         }
       } catch (err) {
         console.warn("Backend review fetch failed, falling back to local list", err);
       }
 
-      // Local storage fallback for network-resilient sandbox
+      // Mix in local client-submitted reviews from localStorage (to show instantly to the current submitter)
       const customReviews = JSON.parse(localStorage.getItem('aria_clean_custom_reviews') || '[]');
-      setReviews([...DEFAULT_REVIEWS, ...customReviews]);
+      
+      // Ensure we don't display duplicate reviews if any local review is already approved and returned by the server
+      const uniqueCustomReviews = customReviews.filter((cr: any) => 
+        !activeReviews.some((ar: any) => ar.quote === cr.quote)
+      );
+
+      setReviews([...activeReviews, ...uniqueCustomReviews]);
     };
     loadReviews();
 
@@ -176,14 +182,43 @@ export default function ReviewsSection() {
       });
 
       if (res.ok) {
-        setIsSubmitting(false);
-        setSuccessMsg(true);
+       
         // Clear outputs
         setName('');
         setLocationValue('');
         setStars(5);
         setQuote('');
 
+        // Store in localStorage for instant local preview/recalculation on the client side
+        const bgImages = [
+          "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=1200",
+          "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200",
+          "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1200",
+          "https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&q=80&w=1200"
+        ];
+        const portraits = [
+          "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=200",
+          "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200",
+          "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200"
+        ];
+        const firstNameOnly = name.trim().split(' ')[0];
+        const newRev: Review = {
+          name: firstNameOnly,
+          role: "",
+          location: locationValue.trim() || "Miami, FL",
+          stars,
+          quote: quote.trim(),
+          bgImageUrl: bgImages[Math.floor(Math.random() * bgImages.length)],
+          portraitUrl: portraits[Math.floor(Math.random() * portraits.length)]
+        };
+
+        const existingCustom = JSON.parse(localStorage.getItem('aria_clean_custom_reviews') || '[]');
+        const nextCustom = [...existingCustom, newRev];
+        localStorage.setItem('aria_clean_custom_reviews', JSON.stringify(nextCustom));
+
+        setIsSubmitting(false);
+        setSuccessMsg(true);
+        
         // Notify components that reviews state needs reloading
         window.dispatchEvent(new Event('aria-review-updated'));
 

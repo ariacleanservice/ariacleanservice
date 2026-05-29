@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { LayoutGrid, CheckSquare, Sparkles, Building2, Home, X, Maximize2 } from 'lucide-react';
+import { LayoutGrid, CheckSquare, Sparkles, Building2, Home, X, Maximize2, Grid, Boxes } from 'lucide-react';
+
 // @ts-ignore
 import closethImg from '../assets/images/closeth.JPG';
 // @ts-ignore
@@ -62,9 +63,9 @@ export default function PortfolioPage() {
   const [selectedItem, setSelectedItem] = useState<PortfolioItem | null>(null);
   
   const categories = [
-    { id: 'all', label: 'ALL PROJECTS', icon: Grid },
+    { id: 'all', label: 'ALL PROJECTS', icon: LayoutGrid },  // Changed from Grid
     { id: 'residential', label: 'RESIDENTIAL', icon: Home },
-    { id: 'airbnb', label: 'HOTELS & AIRBNB', icon: Building },
+    { id: 'airbnb', label: 'HOTELS & AIRBNB', icon: Building2 },
     { id: 'organization', label: 'ORGANIZATION', icon: Boxes }
   ];
 

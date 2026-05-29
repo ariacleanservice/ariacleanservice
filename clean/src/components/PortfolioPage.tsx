@@ -1,51 +1,143 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { LayoutGrid, CheckSquare, Sparkles, Building2, Home, X, Maximize2 } from 'lucide-react';
+// @ts-ignore
+import closethImg from '../assets/images/closeth.JPG';
+// @ts-ignore
+import closeth2Img from '../assets/images/closeth2.JPG';
+// @ts-ignore
+import closeth3Img from '../assets/images/closeth3.JPG';
+// @ts-ignore
+import closeth4Img from '../assets/images/closeth4.JPG';
+// @ts-ignore
+import organizeImg from '../assets/images/organize.JPG';
+// @ts-ignore
+import sink1Img from '../assets/images/sink1.JPG';
+// @ts-ignore
+import abcImg from '../assets/images/abc.jpg';
+// @ts-ignore
+import bathImg from '../assets/images/bath.jpg';
+// @ts-ignore
+import bathrImg from '../assets/images/bathr.jpg';
+// @ts-ignore
+import bathroomImg from '../assets/images/bathroom.jpg';
+// @ts-ignore
+import livingImg from '../assets/images/living.jpg';
+// @ts-ignore
+import living2Img from '../assets/images/living2.jpg';
+// @ts-ignore
+import living3Img from '../assets/images/living3.jpg';
+// @ts-ignore
+import bedImg from '../assets/images/bed.JPG';
+// @ts-ignore
+import bed2Img from '../assets/images/bed2.JPG';
+// @ts-ignore
+import bed3Img from '../assets/images/bed3.JPG';
+// @ts-ignore
+import oneImg from '../assets/images/one.JPG';
+// @ts-ignore
+import twoImg from '../assets/images/two.JPG';
+// @ts-ignore
+import threeeImg from '../assets/images/three.JPG';
+// @ts-ignore
+import fourImg from '../assets/images/four.JPG';
+// @ts-ignore
+import fiveImg from '../assets/images/five.JPG';
+// @ts-ignore
+import sixImg from '../assets/images/six.JPG';
+// @ts-ignore
+import sevenImg from '../assets/images/seven.JPG';
 
 interface PortfolioItem {
   id: string;
   title: string;
-  category: 'residential' | 'airbnb' | 'commercial' | 'detailing' | 'organization';
+  category: 'residential' | 'airbnb' | 'commercial' | 'organization';
   categoryLabel: string;
   description: string;
   imageUrl: string;
 }
 
 export default function PortfolioPage() {
-  const [filter, setFilter] = useState<'all' | 'residential' | 'airbnb' | 'detailing' | 'organization'>('all');
+  const [filter, setFilter] = useState<'all' | 'residential' | 'airbnb' | 'organization'>('all');
   const [selectedItem, setSelectedItem] = useState<PortfolioItem | null>(null);
-
+  
   const categories = [
-    { id: 'all', label: 'All Projects', icon: LayoutGrid },
-    { id: 'residential', label: 'Residential', icon: Home },
-    { id: 'airbnb', label: 'Hotels & Airbnb', icon: Sparkles },
-    { id: 'organization', label: 'Organization', icon: CheckSquare },
+    { id: 'all', label: 'ALL PROJECTS', icon: Grid },
+    { id: 'residential', label: 'RESIDENTIAL', icon: Home },
+    { id: 'airbnb', label: 'HOTELS & AIRBNB', icon: Building },
+    { id: 'organization', label: 'ORGANIZATION', icon: Boxes }
   ];
 
   const portfolioItems: PortfolioItem[] = [
     {
       id: 'port-1',
-      title: 'Waterfront Penthouse Deep Clean',
+      title: 'Luxury Residential Cleaning',
       category: 'residential',
       categoryLabel: 'Residential',
-      description: 'An immaculate move-in cleaning for a luxury high-rise penthouse, detailing floor-to-ceiling baseboards, marble floor polishing, and sanitizing every surface to absolute perfection.',
-      imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200'
+      description: 'Immaculate deep cleaning for high-end residential properties. Complete floor-to-ceiling sanitization with attention to premium finishes and delicate surfaces.',
+      imageUrl: abcImg,
+      status: 'COMPLETED',
+      location: 'Miami Area'
     },
     {
       id: 'port-2',
-      title: 'Boutique Airbnb Turnover',
-      category: 'airbnb',
-      categoryLabel: 'Hotels & Airbnb',
-      description: 'Flawless 5-star hotel standard turnover for a premier short-term rental. Neatly pressed bed linens, replenished premium toiletries, and comprehensive sanitization between guest placements.',
-      imageUrl: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=1200'
+      title: 'Premium Bathroom Restoration',
+      category: 'residential',
+      categoryLabel: 'Residential',
+      description: 'Expert bathroom cleaning and sanitization. Sparkling fixtures, pristine tiles, and luxurious spa-like ambiance.',
+      imageUrl: bathImg,
+      status: 'COMPLETED',
+      location: 'Miami Area'
     },
     {
       id: 'port-3',
-      title: 'Modern Architecture Window Detailing',
-      category: 'detailing',
-      categoryLabel: 'Detailing',
-      description: 'Exterior and interior glass panes restoration on a luxury oceanfront mansion. Reclaiming panoramic crystal clarity from salt spray, water spots, and atmospheric dust.',
-      imageUrl: 'https://images.unsplash.com/photo-1603796846097-bee99e4a60c9?auto=format&fit=crop&q=80&w=1200'
+      title: 'Master Bath Detailing',
+      category: 'residential',
+      categoryLabel: 'Residential',
+      description: 'Comprehensive bathroom deep clean. Gleaming surfaces, polished hardware, and immaculate grout restoration.',
+      imageUrl: bathrImg,
+      status: 'COMPLETED',
+      location: 'Miami Area'
+    },
+    {
+      id: 'port-13',
+      title: 'Spotless Bathroom Sanctuary',
+      category: 'residential',
+      categoryLabel: 'Residential',
+      description: 'Meticulous bathroom transformation. Complete sanitization with attention to corners, fixtures, and tile perfection.',
+      imageUrl: bathroomImg,
+      status: 'COMPLETED',
+      location: 'Miami Area'
+    },
+    {
+      id: 'port-12',
+      title: 'Living Room Elegance',
+      category: 'residential',
+      categoryLabel: 'Residential',
+      description: 'Professional living space restoration. Dust-free surfaces, pristine furnishings, and immaculate floors for ultimate comfort.',
+      imageUrl: livingImg,
+      status: 'COMPLETED',
+      location: 'Miami Area'
+    },
+    {
+      id: 'port-11',
+      title: 'Luxury Living Space Refresh',
+      category: 'residential',
+      categoryLabel: 'Residential',
+      description: 'Complete living room deep clean. Furniture care, floor restoration, and refined ambient cleanliness.',
+      imageUrl: living2Img,
+      status: 'COMPLETED',
+      location: 'Miami Area'
+    },
+    {
+      id: 'port-10',
+      title: 'Contemporary Living Room Detail',
+      category: 'residential',
+      categoryLabel: 'Residential',
+      description: 'Sophisticated living area transformation. Premium surface treatment, fabric care, and architectural detail cleaning.',
+      imageUrl: living3Img,
+      status: 'COMPLETED',
+      location: 'Miami Area'
     },
     {
       id: 'port-4',
@@ -53,37 +145,165 @@ export default function PortfolioPage() {
       category: 'organization',
       categoryLabel: 'Organization',
       description: 'Sophisticated closet layout arrangement. Sorting garments by season, palette grouping, and organizing footwear to optimize spatial harmony and functional mornings.',
-      imageUrl: 'https://images.unsplash.com/photo-1558882224-cca166733360?auto=format&fit=crop&q=80&w=1200'
+      imageUrl: closethImg,
+      status: 'COMPLETED',
+      location: 'Miami Area'
+    },
+    {
+      id: 'port-5',
+      title: 'Luxury Closet Organization',
+      category: 'organization',
+      categoryLabel: 'Organization',
+      description: 'Expert wardrobe curation and closet design. Hangers arranged by color palette, seasonal sorting, and premium storage solutions.',
+      imageUrl: closeth2Img,
+      status: 'COMPLETED',
+      location: 'Miami Area'
     },
     {
       id: 'port-6',
-      title: 'Chef\'s Kitchen & Appliance Restore',
-      category: 'detailing',
-      categoryLabel: 'Detailing',
-      description: 'Intense interior oven carbon extraction and complete refrigerator breakdown wash. Restoring food-grade hygiene and brilliant steel luster to heavy-use gourmet kitchens.',
-      imageUrl: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=1200'
+      title: 'Premium Closet & Wardrobe Styling',
+      category: 'organization',
+      categoryLabel: 'Organization',
+      description: 'Professional closet transformation. Complete organization system with color-coordinated garments and optimized hanging solutions.',
+      imageUrl: closeth3Img,
+      status: 'COMPLETED',
+      location: 'Miami Area'
     },
     {
       id: 'port-7',
-      title: 'Walk-In Pantry Custom Alignment',
+      title: 'Walk-In Closet Refinement',
       category: 'organization',
       categoryLabel: 'Organization',
-      description: 'Restructured double-door kitchen pantry. Clear glass container tracking, precise spice sorting, and accessibility configuration for everyday ingredients.',
-      imageUrl: 'https://images.unsplash.com/photo-1590311825124-73ec52331a44?auto=format&fit=crop&q=80&w=1200'
+      description: 'Full walk-in closet reorganization. Systematic arrangement of clothing, accessories, and footwear for effortless daily selection.',
+      imageUrl: closeth4Img,
+      status: 'COMPLETED',
+      location: 'Miami Area'
     },
     {
       id: 'port-8',
-      title: 'Oceanfront Villa Recovery Service',
-      category: 'residential',
-      categoryLabel: 'Residential',
-      description: 'An exhaustive, high-standard seasonal restoration of a 6,000 sq ft residential estate. Restoring luxury wood floors, delicate upholstery cleaning, and deep crown molding dusting.',
-      imageUrl: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=1200'
+      title: 'Bespoke Spatial Organization',
+      category: 'organization',
+      categoryLabel: 'Organization',
+      description: 'Custom organization solutions. Strategic layout planning and detailed arrangement for maximum functionality and elegance.',
+      imageUrl: organizeImg,
+      status: 'COMPLETED',
+      location: 'Miami Area'
+    },
+    {
+      id: 'port-9',
+      title: 'Luxury Bathroom Organization',
+      category: 'organization',
+      categoryLabel: 'Organization',
+      description: 'Premium bathroom counter and fixture organization. Coordinated storage, gleaming surfaces, and refined arrangement.',
+      imageUrl: sink1Img,
+      status: 'COMPLETED',
+      location: 'Miami Area'
+    },
+    {
+      id: 'port-14',
+      title: 'Luxury Bedroom Turnover',
+      category: 'airbnb',
+      categoryLabel: 'Hotels & Airbnb',
+      description: 'Premium bedroom preparation for short-term rentals. Fresh linens, spotless surfaces, and luxurious ambiance for guest satisfaction.',
+      imageUrl: bedImg,
+      status: 'COMPLETED',
+      location: 'Miami Area'
+    },
+    {
+      id: 'port-15',
+      title: 'Master Suite Deep Clean',
+      category: 'airbnb',
+      categoryLabel: 'Hotels & Airbnb',
+      description: 'Comprehensive master bedroom sanitization. Pristine bedding, dust-free surfaces, and refined guest-ready presentation.',
+      imageUrl: bed2Img,
+      status: 'COMPLETED',
+      location: 'Miami Area'
+    },
+    {
+      id: 'port-16',
+      title: 'Guest Bedroom Excellence',
+      category: 'airbnb',
+      categoryLabel: 'Hotels & Airbnb',
+      description: 'Expert guest room preparation. Immaculate surfaces, fresh linens, and welcoming cleanliness for premium rental experience.',
+      imageUrl: bed3Img,
+      status: 'COMPLETED',
+      location: 'Miami Area'
+    },
+    {
+      id: 'port-17',
+      title: 'Airbnb Property Turnover',
+      category: 'airbnb',
+      categoryLabel: 'Hotels & Airbnb',
+      description: 'Complete property reset between guests. Thorough sanitization, fresh staging, and five-star cleanliness standards.',
+      imageUrl: oneImg,
+      status: 'COMPLETED',
+      location: 'Miami Area'
+    },
+    {
+      id: 'port-18',
+      title: 'Short-Term Rental Refresh',
+      category: 'airbnb',
+      categoryLabel: 'Hotels & Airbnb',
+      description: 'Professional turnover cleaning for vacation rentals. Deep clean, detailed sanitization, and guest-ready excellence.',
+      imageUrl: twoImg,
+      status: 'COMPLETED',
+      location: 'Miami Area'
+    },
+    {
+      id: 'port-19',
+      title: 'Boutique Airbnb Detailing',
+      category: 'airbnb',
+      categoryLabel: 'Hotels & Airbnb',
+      description: 'Meticulous cleaning for luxury short-term properties. Premium presentation and impeccable guest experience preparation.',
+      imageUrl: threeeImg,
+      status: 'COMPLETED',
+      location: 'Miami Area'
+    },
+    {
+      id: 'port-20',
+      title: 'High-End Rental Property Care',
+      category: 'airbnb',
+      categoryLabel: 'Hotels & Airbnb',
+      description: 'Expert care for premium vacation rentals. Complete sanitization with attention to luxury finishes and guest comfort.',
+      imageUrl: fourImg,
+      status: 'COMPLETED',
+      location: 'Miami Area'
+    },
+    {
+      id: 'port-21',
+      title: 'Seamless Guest Transition',
+      category: 'airbnb',
+      categoryLabel: 'Hotels & Airbnb',
+      description: 'Efficient property turnovers between guests. Rapid deep clean with five-star quality and attention to detail.',
+      imageUrl: fiveImg,
+      status: 'COMPLETED',
+      location: 'Miami Area'
+    },
+    {
+      id: 'port-22',
+      title: 'Luxury Vacation Rental Polish',
+      category: 'airbnb',
+      categoryLabel: 'Hotels & Airbnb',
+      description: 'Premium presentation for high-end Airbnb properties. Spotless interiors and refined guest-ready excellence.',
+      imageUrl: sixImg,
+      status: 'COMPLETED',
+      location: 'Miami Area'
+    },
+    {
+      id: 'port-23',
+      title: 'Resort-Quality Property Cleaning',
+      category: 'airbnb',
+      categoryLabel: 'Hotels & Airbnb',
+      description: 'Professional hotel-standard cleaning for short-term rentals. Complete sanitization and luxury presentation.',
+      imageUrl: sevenImg,
+      status: 'COMPLETED',
+      location: 'Miami Area'
     }
   ];
 
-  const filteredItems = filter === 'all' 
-    ? portfolioItems 
-    : portfolioItems.filter(item => item.category === filter || (filter === 'detailing' && item.category === 'detailing'));
+  const filteredItems = filter === 'all'
+    ? portfolioItems
+    : portfolioItems.filter(item => item.category === filter);
 
   return (
     <div className="py-24 bg-[#FDFCFB] min-h-[85vh] flex flex-col justify-start">

@@ -8,7 +8,7 @@ import ildaFounderImg from '../assets/images/ilda.PNG';
 // @ts-ignore
 import bathroomImg from '../assets/images/bathroom.JPG';
 // @ts-ignore
-import bed3Img from '../assets/images/bed2.JPG';
+import bed2Img from '../assets/images/bed2.JPG';
 
 interface HeroProps {
   onCalculateClick: () => void;

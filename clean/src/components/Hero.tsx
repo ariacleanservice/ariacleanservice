@@ -21,7 +21,7 @@ export default function Hero({ onCalculateClick }: HeroProps) {
   const [founderPhoto, setFounderPhoto] = useState<string>(ildaFounderImg);
   const [heroBanner, setHeroBanner] = useState<string>(luxuryCleanInterior);
   const [categoryName, setCategoryName] = useState('Elite Residential, Airbnb & Commercial Cleaning');
-  const [masterTitle, setMasterTitle] = useState('Elevated Cleaning Services for Airbnb & Residential');
+  const [masterTitle, setMasterTitle] = useState('Elevated Cleaning Services for Residential & Airbnb');
   const [mutedDescription, setMutedDescription] = useState('Experience premium residential, short-term Airbnb rental, and commercial cleaning at its absolute finest. Aria Clean Service delivers meticulous deep cleaning, detailed turnovers, and professional office and store care in Miami, combining elite professional sanitization with safe, refreshing comfort.');
 
   const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -87,7 +87,7 @@ export default function Hero({ onCalculateClick }: HeroProps) {
 
     const loadSiteText = () => {
       setCategoryName(localStorage.getItem('aria_hero_category') || 'Elite Residential, Airbnb & Commercial Cleaning');
-      setMasterTitle(localStorage.getItem('aria_hero_title') || 'Elevated Cleaning Services for Airbnb & Residential');
+      setMasterTitle(localStorage.getItem('aria_hero_title') || 'Elevated Cleaning Services for Residential & Airbnb');
       setMutedDescription(localStorage.getItem('aria_hero_description') || 'Experience premium residential, short-term Airbnb rental, and commercial cleaning at its absolute finest. Aria Clean Service delivers meticulous deep cleaning, detailed turnovers, and professional office and store care in Miami, combining elite professional sanitization with safe, refreshing comfort.');
     };
 

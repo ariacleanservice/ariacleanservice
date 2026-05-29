@@ -38,7 +38,7 @@ import oneImg from '../assets/images/one.JPG';
 // @ts-ignore
 import twoImg from '../assets/images/two.JPG';
 // @ts-ignore
-import threeeImg from '../assets/images/three.JPG';
+import threeeImg from '../assets/images/threee.JPG';
 // @ts-ignore
 import fourImg from '../assets/images/four.JPG';
 // @ts-ignore

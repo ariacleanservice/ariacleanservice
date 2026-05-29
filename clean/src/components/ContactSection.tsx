@@ -31,7 +31,7 @@ export default function ContactSection() {
 
           {/* Instagram Link Button */}
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/ariacleanservice/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 flex items-center justify-center gap-3 font-sans text-[10px] tracking-[0.22em] uppercase font-bold bg-[#2D2D2D] hover:bg-[#404040]/90 text-white px-4 rounded-xl transition-all duration-300 shadow-xs cursor-pointer active:translate-y-[1px] outline outline-1 outline-offset-[3px] outline-[#2D2D2D]/60 hover:outline-[#2D2D2D] h-[58px] text-center w-full"

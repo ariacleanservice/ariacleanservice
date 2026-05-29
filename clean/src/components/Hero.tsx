@@ -8,7 +8,7 @@ import ildaFounderImg from '../assets/images/ilda.PNG';
 // @ts-ignore
 import bathroomImg from '../assets/images/bathroom.JPG';
 // @ts-ignore
-import bed3Img from '../assets/images/bed3.JPG';
+import bed3Img from '../assets/images/bed2.JPG';
 
 interface HeroProps {
   onCalculateClick: () => void;
@@ -36,7 +36,7 @@ export default function Hero({ onCalculateClick }: HeroProps) {
       role: "Immaculate Bathroom Luxury"
     },
     {
-      url: bed3Img,
+      url: bed2Img,
       caption: "Restorative Dust & Linen Detailing", 
       role: "Pristine Luxury Chamber"
     }

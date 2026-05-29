@@ -9,8 +9,6 @@ import ildaFounderImg from '../assets/images/ilda.PNG';
 import bathroomImg from '../assets/images/bathroom.JPG';
 // @ts-ignore
 import bed3Img from '../assets/images/bed3.JPG';
-// @ts-ignore
-import bed3Img from '../assets/images/closeth.JPG';
 
 interface HeroProps {
   onCalculateClick: () => void;
@@ -36,11 +34,6 @@ export default function Hero({ onCalculateClick }: HeroProps) {
       url: bathroomImg,
       caption: "High-Definition Sanitization",
       role: "Immaculate Bathroom Luxury"
-    },
-      {
-      url: closethImg,
-      caption: "Bespoke Spatial Organization",
-      role: "Luxury Closet & Wardrobe Styling"
     },
     {
       url: bed3Img,

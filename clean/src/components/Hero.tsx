@@ -32,15 +32,15 @@ export default function Hero({ onCalculateClick }: HeroProps) {
       caption: "Spotless Modern Residence",
       role: "Living Room Sanctuary"
     },
-      {
-      url: closethImg,
-      caption: "Bespoke Spatial Organization",
-      role: "Luxury Closet & Wardrobe Styling"
-    },
     {
       url: bathroomImg,
       caption: "High-Definition Sanitization",
       role: "Immaculate Bathroom Luxury"
+    },
+      {
+      url: closethImg,
+      caption: "Bespoke Spatial Organization",
+      role: "Luxury Closet & Wardrobe Styling"
     },
     {
       url: bed2Img,

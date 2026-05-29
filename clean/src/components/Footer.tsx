@@ -41,7 +41,7 @@ export default function Footer({ onPageChange }: FooterProps) {
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#2D2D2D]" />
                 <a href="tel:3059005345" className="hover:text-black transition-colors underline underline-offset-4 decoration-[#EBEBEB]">
-                  (305) 900-5345
+                  (305) 876-5595
                 </a>
               </div>
               <div className="flex items-center gap-3">

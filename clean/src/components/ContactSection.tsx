@@ -22,11 +22,11 @@ export default function ContactSection() {
           
           {/* Phone Contact Button */}
           <a
-            href="tel:3059005345"
+            href="tel:3058765595"
             className="flex-1 flex items-center justify-center gap-3 font-sans text-[10px] tracking-[0.22em] uppercase font-bold bg-[#2D2D2D] hover:bg-[#404040]/90 text-white px-4 rounded-xl transition-all duration-300 shadow-xs cursor-pointer active:translate-y-[1px] outline outline-1 outline-offset-[3px] outline-[#2D2D2D]/60 hover:outline-[#2D2D2D] h-[58px] text-center w-full"
           >
             <Phone className="w-4 h-4 text-[#A8B5A2] shrink-0" />
-            <span>Call (305) 900-5345</span>
+            <span>Call (305) 876-5595</span>
           </a>
 
           {/* Instagram Link Button */}

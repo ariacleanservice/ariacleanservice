@@ -72,21 +72,21 @@ export default function PortfolioPage() {
   const portfolioItems: PortfolioItem[] = [
     {
       id: 'port-1',
-      title: 'Luxury Residential Cleaning',
-      category: 'residential',
-      categoryLabel: 'Residential',
-      description: 'Immaculate deep cleaning for high-end residential properties. Complete floor-to-ceiling sanitization with attention to premium finishes and delicate surfaces.',
-      imageUrl: abcImg,
-      status: 'COMPLETED',
-      location: 'Miami Area'
-    },
-    {
-      id: 'port-2',
       title: 'Premium Bathroom Restoration',
       category: 'residential',
       categoryLabel: 'Residential',
       description: 'Expert bathroom cleaning and sanitization. Sparkling fixtures, pristine tiles, and luxurious spa-like ambiance.',
       imageUrl: bathImg,
+      status: 'COMPLETED',
+      location: 'Miami Area'
+    },
+    {
+      id: 'port-2',
+      title: 'Luxury Residential Cleaning',
+      category: 'residential',
+      categoryLabel: 'Residential',
+      description: 'Immaculate deep cleaning for high-end residential properties. Complete floor-to-ceiling sanitization with attention to premium finishes and delicate surfaces.',
+      imageUrl: abcImg,
       status: 'COMPLETED',
       location: 'Miami Area'
     },
@@ -224,7 +224,7 @@ export default function PortfolioPage() {
       id: 'port-16',
       title: 'Guest Bedroom Excellence',
       category: 'airbnb',
-      categoryLabel: 'Hotels & Airbnb',
+      categoryLabel: 'Residential',
       description: 'Expert guest room preparation. Immaculate surfaces, fresh linens, and welcoming cleanliness for premium rental experience.',
       imageUrl: bed3Img,
       status: 'COMPLETED',

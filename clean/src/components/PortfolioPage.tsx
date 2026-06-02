@@ -213,8 +213,8 @@ export default function PortfolioPage() {
     {
       id: 'port-15',
       title: 'Master Suite Deep Clean',
-      category: 'airbnb',
-      categoryLabel: 'Hotels & Airbnb',
+      category: 'Residential',
+      categoryLabel: 'Residential',
       description: 'Comprehensive master bedroom sanitization. Pristine bedding, dust-free surfaces, and refined guest-ready presentation.',
       imageUrl: bed2Img,
       status: 'COMPLETED',
@@ -223,7 +223,7 @@ export default function PortfolioPage() {
     {
       id: 'port-16',
       title: 'Guest Bedroom Excellence',
-      category: 'airbnb',
+      category: 'Residential',
       categoryLabel: 'Residential',
       description: 'Expert guest room preparation. Immaculate surfaces, fresh linens, and welcoming cleanliness for premium rental experience.',
       imageUrl: bed3Img,
